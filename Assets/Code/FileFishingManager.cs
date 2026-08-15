@@ -43,7 +43,7 @@ public class FileFishingManager : MonoBehaviour
       yield return new WaitForSeconds(10f); //make this random in future
 
       FileItem caughtFile = RetrieveRandomFile();
-      if (caughtFile != null && (basket.Files).Size < 20)
+      if (caughtFile != null && (basket.Files).Count < 20)
       {
         cat.StartFishing();
         Debug.Log("found file, starting fish");
