@@ -446,6 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FileFishingManager
   cat: {fileID: 59931307}
   basket: {fileID: 1719876000}
+  systemManager: {fileID: 1235504648}
 --- !u!4 &764635344
 Transform:
   m_ObjectHideFlags: 0

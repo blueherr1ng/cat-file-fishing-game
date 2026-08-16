@@ -8,29 +8,15 @@ public class FileFishingManager : MonoBehaviour
 {
   public CatController cat;
   public BasketManager basket;
-  private string testPath;
-  private string[] testPaths;
-  // private string[] folderPaths;
+  public SystemManager systemManager;
+
 
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
   {
-
-    //sum path shit
-    string userPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-
-    //for final
-    // string downloadsPath = Path.Combine(userPath, "Downloads");
-    string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-    //folderPaths = new[] { downloadsPath, desktopPath };
-
-    testPath = Path.Combine(desktopPath, "TestFolder");
-    Debug.Log("hi! file path is " + testPath);
-    testPaths = new[] { testPath }; ;
-
-    //start fishing mofo
     StartCoroutine(FishingLoop());
   }
+
 
 
 
@@ -42,8 +28,8 @@ public class FileFishingManager : MonoBehaviour
       Debug.Log("fishing...");
       yield return new WaitForSeconds(10f); //make this random in future
 
-      FileItem caughtFile = RetrieveRandomFile();
-      if (caughtFile != null && (basket.Files).Count < 20)
+      FileItem caughtFile = systemManager.RetrieveRandomFile();
+      if (caughtFile != null && basket.Files.Count < 20)
       {
         cat.StartFishing();
         Debug.Log("found file, starting fish");
@@ -84,36 +70,6 @@ public class FileFishingManager : MonoBehaviour
     }
   }
 
-
-  FileItem RetrieveRandomFile()
-  {
-    int randFold = UnityEngine.Random.Range(0, testPaths.Length); //final: int randFold = UnityEngine.Random.Range(0, folderPaths.Length);
-    var allFiles = Directory.EnumerateFiles(testPaths[randFold]); //final: var allFiles = Directory.EnumerateFiles(folderPaths[randFold]);
-
-    string[] allowedExtensions =
-    {
-      ".png", ".jpg", ".jpeg", ".pdf", ".html",
-      ".txt", ".mov", ".mp4", ".mp3", ".m4a",
-      ".webp", ".gif", ".dmg", ".epub", ".zip",
-      ".ai", ".psd", ".tar", ".tex", ".csv",
-      ".ics", ".procreate", ".pkf", ".pkg",
-      ".tif", ".svg", ".wav", ".docx", ".blend",
-    };
-    string[] caughtFiles = allFiles.Where(file => allowedExtensions.Contains(Path.GetExtension(file), StringComparer.OrdinalIgnoreCase)).ToArray();
-    int numFiles = caughtFiles.Length;
-
-    if (numFiles == 0)
-    {
-      Debug.Log("No catchable files found.");
-      return null;
-    }
-    int randIdx = UnityEngine.Random.Range(0, numFiles);
-    string caught = caughtFiles[randIdx];
-    Debug.Log("caught file " + caught);
-
-    return new FileItem(caught);
-
-  }
 
   // Update is called once per frame
   void Update()
