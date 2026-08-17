@@ -10,6 +10,8 @@ public class BasketManager : MonoBehaviour
     public Sprite EmptyBasketSprite;
     public Sprite FullBasketSprite;
 
+    public GameObject BasketUI;
+
 
     public List<FileItem> Files = new List<FileItem>();
     public GameObject FileItemPrefab;
@@ -23,6 +25,16 @@ public class BasketManager : MonoBehaviour
     {
 
     }
+
+    public void OpenBasket()
+    {
+        BasketUI.SetActive(true);
+    }
+    public void CloseBasket()
+    {
+        BasketUI.SetActive(false);
+    }
+
     public void AddFile(FileItem file)
     {
         string path = file.FilePath;
