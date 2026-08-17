@@ -248,6 +248,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   animator: {fileID: 59931304}
+--- !u!1 &103478194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2981070980549769946, guid: e22f67df2ae9d49f799a2c443b3aa801, type: 3}
+  m_PrefabInstance: {fileID: 655032693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &195680599
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,13 +537,47 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6456662507871250886, guid: e22f67df2ae9d49f799a2c443b3aa801, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2069687930}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2981070980549769946, guid: e22f67df2ae9d49f799a2c443b3aa801, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 655032697}
   m_SourcePrefab: {fileID: 100100000, guid: e22f67df2ae9d49f799a2c443b3aa801, type: 3}
 --- !u!224 &655032694 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6456662507871250886, guid: e22f67df2ae9d49f799a2c443b3aa801, type: 3}
   m_PrefabInstance: {fileID: 655032693}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &655032697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103478194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acc7e9994eeb4fe6acfa7513f5c8ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIDraggable
+  target: {fileID: 2018014552}
+--- !u!1 &700121901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1477705724297068024, guid: f3506aa8c754448f1bf6bc3f39e302c0, type: 3}
+  m_PrefabInstance: {fileID: 2774243809086396939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &700121904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700121901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acc7e9994eeb4fe6acfa7513f5c8ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIDraggable
+  target: {fileID: 1417878448}
 --- !u!1 &764635342
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,7 +2089,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7225345632936062692, guid: f3506aa8c754448f1bf6bc3f39e302c0, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1251252631}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1477705724297068024, guid: f3506aa8c754448f1bf6bc3f39e302c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 700121904}
   m_SourcePrefab: {fileID: 100100000, guid: f3506aa8c754448f1bf6bc3f39e302c0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

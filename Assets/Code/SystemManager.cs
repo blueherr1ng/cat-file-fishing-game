@@ -47,7 +47,7 @@ public class SystemManager : MonoBehaviour
         }
         else if (Application.platform == RuntimePlatform.WindowsPlayer)
         {
-            // Windows implementation
+            // return WindowsTrashFilePath(filePath);
             return false;
         }
         else if (Application.platform == RuntimePlatform.LinuxPlayer)
